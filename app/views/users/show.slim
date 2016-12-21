@@ -1,0 +1,18 @@
+p id="notice"
+  = notice
+h4
+  strong Name:
+  =< @user.name  
+h4
+  strong Last Name:
+  =< @user.last_name
+h4
+  strong Email:
+  =< @user.email
+h4
+  strong Age:
+  =< @user.age
+    
+.btn-group.btn-group
+  = link_to 'Edit', edit_user_path(@user), class: 'btn btn-success'
+  = link_to 'Back', users_path, class: 'btn btn-success'

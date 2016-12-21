@@ -1,0 +1,27 @@
+doctype html
+html
+  head
+    title Users
+  = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true 
+  = javascript_include_tag 'application', 'data-turbolinks-track' => true 
+  = csrf_meta_tags
+  
+body
+  .nav.navbar.navbar-inverse
+    .container-fluid
+      .navbar-header
+        a.navbar-brand href="/" Users
+      ul.nav.navbar-nav.navbar-right
+        - if user_signed_in?
+            li
+              = link_to "#{current_user.name} #{current_user.last_name}", 
+                              edit_user_registration_path(current_user)
+            li 
+              = link_to 'Logout', destroy_user_session_path, :method => :delete
+        - else
+            li 
+              = link_to 'Login', new_user_session_path
+            li 
+              = link_to 'Sign up', new_user_registration_path          
+  .container
+    = yield
