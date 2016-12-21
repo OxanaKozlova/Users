@@ -14,7 +14,7 @@ body
       ul.nav.navbar-nav.navbar-right
         - if user_signed_in?
             li
-              = link_to current_user.name + ' ' +current_user.last_name, 
+              = link_to "#{current_user.name} #{current_user.last_name}", 
                               edit_user_registration_path(current_user)
             li 
               = link_to 'Logout', destroy_user_session_path, :method => :delete
