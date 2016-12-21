@@ -35,8 +35,8 @@ h2 Sign up
     br
     
     = f.password_field :password_confirmation, autocomplete: "off"
-
-  .actions
-    = f.submit "Sign up"
+  br
+  = button_tag(type: 'submit', class: "btn btn-info") do
+    i.icon-ok.icon-white Sign up
 
 = render "devise/shared/links"

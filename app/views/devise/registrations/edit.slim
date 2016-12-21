@@ -1,6 +1,6 @@
 h2
   | Edit
-  = resource_name.to_s.humanize
+  =< resource_name.to_s.humanize
 
 = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
   = devise_error_messages!
@@ -9,6 +9,24 @@ h2
     = f.label :email
     br
     = f.email_field :email, autofocus: true
+  .field
+    = f.label :name
+    br
+    = f.text_field :name, autofocus: true 
+
+  .field
+    = f.label :last_name
+    br
+    = f.text_field :last_name
+  .field
+    = f.label :email
+    br
+    = f.email_field :email
+
+  .field
+    = f.label :age
+    br
+    = f.number_field :age  
 
   - if devise_mapping.confirmable? && resource.pending_reconfirmation?
     div

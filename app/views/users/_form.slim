@@ -12,7 +12,7 @@
   .field
     = f.label :name
     br
-    = f.text_field :name
+    = f.text_field :name, autofocus: true
   .field
     = f.label :last_name
     br
@@ -34,6 +34,7 @@
         |  characters minimum )
     br
     = f.password_field :password, autocomplete: "off"  
-    
-  .actions
-    = f.submit
+
+  br  
+  = button_tag(type: 'submit', class: "btn btn-success") do
+    i.icon-ok.icon-white Create
