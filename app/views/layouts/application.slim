@@ -10,7 +10,8 @@ body
   .nav.navbar.navbar-inverse
     .container-fluid
       .navbar-header
-        a.navbar-brand href="/" Users
+        a.navbar-brand href="/" 
+          =t :users
       ul.nav.navbar-nav.navbar-right
         - if user_signed_in?
             li
