@@ -28,6 +28,7 @@ gem 'validates_email_format_of'
 gem 'rails_12factor'
 gem 'devise'
 gem 'slim'
+gem 'cancancan'
 
 
 # Use ActiveModel has_secure_password
