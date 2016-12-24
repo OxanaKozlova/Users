@@ -29,8 +29,6 @@ gem 'rails_12factor'
 gem 'devise'
 gem 'slim'
 gem 'cancancan'
-
-
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

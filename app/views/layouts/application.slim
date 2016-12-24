@@ -11,13 +11,17 @@ body
     .container-fluid
       .navbar-header
         a.navbar-brand href="/" Users
+        .navbar-header
       ul.nav.navbar-nav.navbar-right
         - if user_signed_in?
-            li
-              = link_to "#{current_user.name} #{current_user.last_name}", 
-                              edit_user_registration_path(current_user)
-            li 
-              = link_to 'Logout', destroy_user_session_path, :method => :delete
+            li role="presentation" class="dropdown"
+              a.dropdown-toggle data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"                  
+                span.glyphicon.glyphicon-align-justify aria-hidden="true"
+                ul.dropdown-menu
+                  li = link_to "#{current_user.name} #{current_user.last_name}", 
+                                edit_user_registration_path(current_user)
+             
+                  li = link_to 'Logout', destroy_user_session_path, :method => :delete
         - else
             li 
               = link_to 'Login', new_user_session_path
