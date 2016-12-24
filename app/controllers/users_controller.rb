@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
   load_and_authorize_resource
-  
+
   # GET /users
   # GET /users.json
   def index
@@ -43,6 +43,9 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1.json
   def update
     respond_to do |format|
+      if not_change_password?
+        params[:user].delete(:password)
+      end
       if @user.update(user_params)
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
         format.json { render :show, status: :ok, location: @user }
@@ -73,5 +76,9 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:age, :name, :last_name, :username,
       :email, :password, :role)
-    end
+  end
+
+  def not_change_password?
+      params[:user][:password].blank?
+  end
 end

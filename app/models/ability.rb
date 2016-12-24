@@ -13,7 +13,7 @@ class Ability
   end
 
   def manager
-    can :manage, User
+    can :read, User
   end
 
   def admin

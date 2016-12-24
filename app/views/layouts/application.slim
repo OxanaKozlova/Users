@@ -13,6 +13,8 @@ body
         a.navbar-brand href="/" Users
         .navbar-header
       ul.nav.navbar-nav.navbar-right
+        - if can? :create, User
+            li   = link_to 'Users', users_path 
         - if user_signed_in?
             li role="presentation" class="dropdown"
               a.dropdown-toggle data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"                  
