@@ -20,9 +20,9 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
-  users: "Users"
-  name: "Name"
-  last_name: "Last Name"
-  email: "Email"
-  age: "Age"
+  hello: Hello world
+  users: Users
+  name: Name
+  last_name: Last Name
+  email: Email
+  age: Age
