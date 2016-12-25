@@ -3,21 +3,21 @@ class Ability
 
   def initialize(user)
     user ||= User.new
-    if user.role?('admin')
+    if user.role?(User::ADMIN_ROLE)
       admin
-    elsif user.role?('manager')
-      manager
+    elsif user.role?(User::MODERATOR_ROLE)
+      moderator
     else
       can :read,  User
     end
   end
 
-  def manager
+  def moderator
     can :read, User
   end
 
   def admin
-    manager
+    moderator
     can :manage, :all
   end
 end

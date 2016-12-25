@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  ROLES = %i[admin moderator user]
+  ROLES = [ADMIN_ROLE = :admin, MODERATOR_ROLE = :moderator, USER_ROLE = :user].freeze
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
 
@@ -11,11 +11,11 @@ class User < ActiveRecord::Base
   before_save :set_role_default
 
   def role?(user_role)
-    role == user_role
+    role == user_role.to_s
   end
 
   private
   def set_role_default
-    self.role ||= "user"
+    self.role ||= User::USER_ROLE.to_s
   end
 end
