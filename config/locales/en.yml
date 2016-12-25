@@ -21,8 +21,10 @@
 
 en:
   hello: Hello world
-  users: Users
-  name: Name
-  last_name: Last Name
-  email: Email
-  age: Age
+  app_name: Users
+  users:
+      attr:
+        name: Name
+        last_name: Last Name
+        email: Email
+        age: Age
