@@ -28,8 +28,8 @@ gem 'validates_email_format_of'
 gem 'rails_12factor'
 gem 'devise'
 gem 'slim'
+gem 'cancancan'
 gem 'rails-i18n', '~> 4.0.0'
-
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
