@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   ROLES = %i[admin moderator user]
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   validates :age, numericality: {greater_than: 0}
@@ -18,6 +18,4 @@ class User < ActiveRecord::Base
   def set_role_default
     self.role ||= "user"
   end
-
-
 end
