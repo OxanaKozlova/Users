@@ -30,6 +30,9 @@ gem 'devise'
 gem 'slim'
 gem 'cancancan'
 gem 'rails-i18n', '~> 4.0.0'
+gem 'carrierwave'
+gem 'cloudinary'
+gem 'ckeditor'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

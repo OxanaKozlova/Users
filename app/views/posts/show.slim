@@ -1,0 +1,17 @@
+h4
+  strong = t('posts.attr.title') 
+  =< @post.title  
+h4
+  strong = t('posts.attr.content')
+  =< raw(@post.content)
+h4
+  strong = t('posts.attr.author') 
+  =< "#{@user.name} #{@user.last_name}"  
+h4
+  strong = t('posts.attr.image')
+  .thumbnail.image-preview-container
+    = cl_image_tag @post.image,  :crop => :fill 
+    
+.btn-group.btn-group
+  = link_to 'Edit', edit_post_path(@post), class: 'btn btn-success'
+  = link_to 'Back', posts_path, class: 'btn btn-success'

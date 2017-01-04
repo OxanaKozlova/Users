@@ -8,12 +8,15 @@ class Ability
     elsif user.role?(User::MODERATOR_ROLE)
       moderator
     else
-      can :read,  User
+      can :read, User
+      can :read, Post
+      can :manage, Post, user_id: user.id
     end
   end
 
   def moderator
     can :read, User
+    can [:read, :manage], Post
   end
 
   def admin

@@ -28,3 +28,10 @@ en:
         last_name: Last Name
         email: Email
         age: Age
+
+  posts:
+      attr:
+        title: Title
+        content: Content
+        image: Image
+        author: Author

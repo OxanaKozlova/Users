@@ -1,0 +1,33 @@
+.container
+  = form_for(@post) do |f|
+    - if @post.errors.any?
+      .alert.alert-danger
+        error_explanation
+          h2
+            = pluralize(@post.errors.count, "error")
+            | prohibited this user from being saved:
+
+          ul
+          - @post.errors.full_messages.each do |message|
+            li = message
+
+    .form-group.row
+      = f.label :title, class: "col-sm-1 col-form-label"
+      .col-sm-8
+        = f.text_field :title, autofocus: true, class: "form-control", placeholder: "Title"      
+    .form-group.row
+      = f.label :content, class: "col-sm-1 col-form-label"
+      .col-sm-8
+        = f.cktext_area :content, class: "form-control"
+    .form-group.row
+      = f.label :image, class: "col-sm-1 col-form-label"
+      .col-sm-8
+        = f.file_field :image, class: "filestyle"
+    <br>
+    br
+    br
+    .btn-group.btn-group  
+      = button_tag(type: 'submit', class: "btn btn-success") do
+        .icon-ok.icon-white Save
+        
+      = link_to 'Back', posts_path, class: "btn btn-success"
