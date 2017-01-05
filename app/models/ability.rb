@@ -1,16 +1,14 @@
 class Ability
   include CanCan::Ability
 
-  def initialize(user)
-    user ||= User.new
-    if user.role?(User::ADMIN_ROLE)
+  def initialize(current_user)
+    current_user ||= User.new
+    if current_user.role?(User::ADMIN_ROLE)
       admin
-    elsif user.role?(User::MODERATOR_ROLE)
+    elsif current_user.role?(User::MODERATOR_ROLE)
       moderator
     else
-      can :read, User
-      can :read, Post
-      can :manage, Post, user_id: user.id
+      user(current_user)
     end
   end
 
@@ -20,7 +18,13 @@ class Ability
   end
 
   def admin
-    moderator
     can :manage, :all
   end
+
+  def user(current_user)
+    can :read, User
+    can :read, Post
+    can :manage, Post, user_id: current_user.id
+  end
+
 end

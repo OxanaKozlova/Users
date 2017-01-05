@@ -12,5 +12,5 @@ h4
   =< @user.age
     
 .btn-group.btn-group
-  = link_to 'Edit', edit_user_path(@user), class: 'btn btn-success'
-  = link_to 'Back', users_path, class: 'btn btn-success'
+  = link_to t('buttons.users.edit'), edit_user_path(@user), class: 'btn btn-success'
+  = link_to t('buttons.users.back'), users_path, class: 'btn btn-success'

@@ -19,10 +19,10 @@
           td
             = user.age
           td
-            = link_to 'Show', user
+            = link_to t('links.users.show'), user
           td
-            = link_to 'Edit', edit_user_path(user)
+            = link_to t('links.users.edit'), edit_user_path(user)
           td
-            = link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }
+            = link_to t('links.users.destroy'), user, method: :delete, data: { confirm: 'Are you sure?' }
 
-  = link_to 'New User', new_user_path, class: "btn btn-success" 
+  = link_to t('buttons.users.create'), new_user_path, class: "btn btn-success" 

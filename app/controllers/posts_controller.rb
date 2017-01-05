@@ -8,7 +8,6 @@ class PostsController < ApplicationController
   end
 
   def show
-    @user = User.where(:id => @post.user_id).first
   end
 
   def new
@@ -21,31 +20,25 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.user_id = current_user.id
-    respond_to do |format|
-      if @post.save
-        format.html { redirect_to @post, notice: 'Post was successfully created.' }
-      else
-        format.html { render :new }
-      end
+    if @post.save
+      flash[:notice] = 'Post was successfully created.'
+      redirect_to @post
+    else render :new
     end
   end
 
   def update
-    respond_to do |format|
-      if @post.update(post_params)
-        format.html { redirect_to @post, notice: 'Post was successfully updated.' }
-      else
-        format.html { render :edit }
-      end
+    if @post.update(post_params)
+      flash[:notice] = 'Post was successfully updated.'
+      redirect_to @post
+    else  render :edit
     end
   end
 
-
   def destroy
     @post.destroy
-    respond_to do |format|
-      format.html { redirect_to posts_url, notice: 'Post was successfully destroyed.' }
-    end
+    flash[:notice] = 'Post was successfully destroyed.'
+    redirect_to posts_url
   end
 
   private
