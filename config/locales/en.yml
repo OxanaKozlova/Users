@@ -36,6 +36,10 @@ en:
         image: Image
         author: Author
 
+  comments:
+      attr:
+        content: Content
+
   buttons:
     users:
       save: Save
@@ -47,6 +51,11 @@ en:
       back: Back
       create: News Post
       edit: Edit
+    comments:
+      save: Comment
+      back: Back
+      create: News Comment
+      edit: Edit
   links:
     users:
       show: Show
@@ -56,8 +65,11 @@ en:
       show: Show
       edit: Edit
       destroy: Destroy
-
+    comments:
+      edit: Edit
+      destroy: Destroy
   errors:
     error: error
     save_post: 'prohibited this post from being saved:'
     save_user: 'prohibited this user from being saved:'
+    save_comment: 'prohibited this comment from being saved:'
