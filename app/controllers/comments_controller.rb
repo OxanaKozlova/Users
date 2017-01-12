@@ -11,7 +11,8 @@ load_and_authorize_resource
     if @comment.save
       flash[:notice] = 'Comment was successfully created.'
       redirect_to @post
-    else  render :new
+    else
+      render :new
     end
   end
 
@@ -19,7 +20,8 @@ load_and_authorize_resource
     if @comment.update(comment_params)
       flash[:notice] = 'Comment was successfully updated.'
       redirect_to comments_path
-    else  render :edit
+    else
+      render :edit
     end
   end
 
