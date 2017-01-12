@@ -21,14 +21,7 @@ h4
         .page-header
           h3 Comments
         .comments-list
-          - @comments.each do |comment|
-            .media
-              p.small.pull-right = comment.created_at.to_formatted_s(:short)
-              .media-body                                
-                h5.media-heading.user_name 
-                  = comment.user.name
-                  =< comment.user.last_name
-                = simple_format(comment.content)              
+          = render partial: 'comment', collection: @comments                         
   br
   br              
 = render 'comments/form'

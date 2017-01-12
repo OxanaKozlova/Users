@@ -1,5 +1,7 @@
 class CommentsController < ApplicationController
 before_action :set_comment, only:[:update]
+before_action :authenticate_user!
+load_and_authorize_resource
 
   def create
     @post = Post.find(params[:post_id])
