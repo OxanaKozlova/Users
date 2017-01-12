@@ -25,7 +25,8 @@ class PostsController < ApplicationController
     if @post.save
       flash[:notice] = 'Post was successfully created.'
       redirect_to @post
-    else render :new
+    else
+      render :new
     end
   end
 
@@ -33,7 +34,8 @@ class PostsController < ApplicationController
     if @post.update(post_params)
       flash[:notice] = 'Post was successfully updated.'
       redirect_to @post
-    else  render :edit
+    else
+      render :edit
     end
   end
 
