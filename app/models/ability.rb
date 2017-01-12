@@ -4,24 +4,24 @@ class Ability
   def initialize(current_user)
     current_user ||= User.new
     if current_user.role?(User::ADMIN_ROLE)
-      admin
+      admin_ability
     elsif current_user.role?(User::MODERATOR_ROLE)
-      moderator
+      moderator_ability
     else
-      user(current_user)
+      user_ability(current_user)
     end
   end
 
-  def moderator
+  def moderator_ability
     can :read, User
     can [:read, :manage], Post
   end
 
-  def admin
+  def admin_ability
     can :manage, :all
   end
 
-  def user(current_user)
+  def user_ability(current_user)
     can :read, User
     can :read, Post
     can :manage, Post, user_id: current_user.id

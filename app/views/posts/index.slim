@@ -7,21 +7,6 @@
         th = t('posts.attr.image')
         th colspan="3"
     tbody
-      - @posts.each do |post|
-        tr
-          td
-            = post.title
-          td
-            = "#{post.user.name} #{post.user.last_name}"
-          td
-            .thumbnail.image-preview-container.col-xs-6.col-md-3
-               = cl_image_tag post.image, :width => 100, 
-                :height => 100, :crop => :fill       
-          td
-            = link_to  t('links.posts.show'), post
-          td
-            = link_to  t('links.posts.edit'), edit_post_path(post)
-          td
-            = link_to t('links.posts.destroy'), post, method: :delete, data: { confirm: 'Are you sure?' }
+      = render partial: 'post', collection: @posts || "There are no posts available."     
 
   = link_to t('buttons.posts.create'), new_post_path, class: "btn btn-success"         
