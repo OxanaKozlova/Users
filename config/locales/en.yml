@@ -28,3 +28,36 @@ en:
         last_name: Last Name
         email: Email
         age: Age
+
+  posts:
+      attr:
+        title: Title
+        content: Content
+        image: Image
+        author: Author
+
+  buttons:
+    users:
+      save: Save
+      back: Back
+      create: New User
+      edit: Edit
+    posts:
+      save: Save
+      back: Back
+      create: News Post
+      edit: Edit
+  links:
+    users:
+      show: Show
+      edit: Edit
+      destroy: Destroy
+    posts:
+      show: Show
+      edit: Edit
+      destroy: Destroy
+
+  errors:
+    error: error
+    save_post: 'prohibited this post from being saved:'
+    save_user: 'prohibited this user from being saved:'

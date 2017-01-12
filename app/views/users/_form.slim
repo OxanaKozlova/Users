@@ -5,9 +5,8 @@
       .alert.alert-danger
         error_explanation
           h2
-            = pluralize(@user.errors.count, "error")
-            | prohibited this user from being saved:
-
+            = pluralize(@user.errors.count, t('errors.error')) 
+            = t('errors.save_user')
           ul
           - @user.errors.full_messages.each do |message|
             li = message
@@ -41,6 +40,6 @@
     br
     .btn-group.btn-group  
       = button_tag(type: 'submit', class: "btn btn-success") do
-        .icon-ok.icon-white Save
+        .icon-ok.icon-white = t('buttons.users.save')
         
-      = link_to 'Back', users_path, class: "btn btn-success"
+      = link_to t('buttons.users.back'), users_path, class: "btn btn-success"

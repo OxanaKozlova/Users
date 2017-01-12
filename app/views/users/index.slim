@@ -8,21 +8,6 @@
         th = t('users.attr.age')
         th colspan="3"
     tbody
-      - @users.each do |user|
-        tr
-          td
-            = user.name
-          td
-            = user.last_name  
-          td
-            = user.email
-          td
-            = user.age
-          td
-            = link_to 'Show', user
-          td
-            = link_to 'Edit', edit_user_path(user)
-          td
-            = link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }
-
-  = link_to 'New User', new_user_path, class: "btn btn-success" 
+      = render partial: 'user', collection: @users || "There are no users available."
+      
+  = link_to t('buttons.users.create'), new_user_path, class: "btn btn-success" 

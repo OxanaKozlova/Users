@@ -1,0 +1,15 @@
+h4
+  .image
+    .thumbnail.image-preview-container
+      = cl_image_tag @post.image,  :crop => :fill 
+    h5#image 
+      span 
+        ="#{t('posts.attr.title')}: #{@post.title} "
+      br
+      span ="#{t('posts.attr.author')}: #{@post.user.name} #{@post.user.last_name}"
+h4
+  strong = t('posts.attr.content')
+  =< raw(@post.content)    
+.btn-group.btn-group
+  = link_to t('buttons.posts.edit'), edit_post_path(@post), class: 'btn btn-success'
+  = link_to t('buttons.posts.back'), posts_path, class: 'btn btn-success'
