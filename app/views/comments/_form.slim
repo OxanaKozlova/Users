@@ -1,5 +1,6 @@
 .container
-  = form_for(@comment, url: post_comments_path(@post)) do |f|
+br
+  = form_for(@comment = Comment.new , url: post_comments_path(@post)) do |f|
     - if @comment.errors.any?
       .alert.alert-danger
         error_explanation
@@ -11,10 +12,8 @@
             li = message
 
     .form-group.row
-      .col-sm-8
+      .col-sm-12
         = f.text_area :content, class: "form-control", placeholder: "Comment"      
-    br
-    br
     .btn-group.btn-group  
       = button_tag(type: 'submit', class: "btn btn-success") do
         .icon-ok.icon-white  = t('buttons.comments.save')

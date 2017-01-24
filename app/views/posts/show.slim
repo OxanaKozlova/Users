@@ -13,15 +13,15 @@ h4
 .btn-group.btn-group
   = link_to t('buttons.posts.edit'), edit_post_path(@post), class: 'btn btn-success'
   = link_to t('buttons.posts.back'), posts_path, class: 'btn btn-success'
-  br
-  br
-  .container
-    .row
-      .col-md-12
-        .page-header
-          h3 Comments
-        .comments-list
-          = render partial: 'comment', collection: @comments                         
-  br
-  br              
-= render 'comments/form'
+= render 'comments/form'             
+
+.container
+  .row
+    .col-md-12
+      .page-header
+        h3 Comments
+      #comments.comments-list
+        = render partial: 'comments/comment', collection: @comments                         
+
+#infinite-scrolling
+  = will_paginate @comments

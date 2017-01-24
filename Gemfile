@@ -33,7 +33,10 @@ gem 'rails-i18n', '~> 4.0.0'
 gem 'carrierwave'
 gem 'cloudinary'
 gem 'ckeditor'
-
+gem 'will_paginate', '~> 3.0.5'
+gem 'betterlorem', '~> 0.1.2'
+gem 'bootstrap-will_paginate', '~> 0.0.10'
+gem 'jquery-turbolinks'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

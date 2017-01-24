@@ -1,5 +1,4 @@
 class CommentsController < ApplicationController
-before_action :set_comment, only:[:update]
 before_action :authenticate_user!
 load_and_authorize_resource
 
@@ -14,21 +13,6 @@ load_and_authorize_resource
     else
       render :new
     end
-  end
-
-  def update
-    if @comment.update(comment_params)
-      flash[:notice] = 'Comment was successfully updated.'
-      redirect_to comments_path
-    else
-      render :edit
-    end
-  end
-
-  private
-
-  def set_comment
-    @comment = Comment.find(params[:id])
   end
 
   def comment_params
