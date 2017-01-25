@@ -61,6 +61,7 @@ en:
       show: Show
       edit: Edit
       destroy: Destroy
+      edit_profile: Edit profile
     posts:
       show: Show
       edit: Edit
