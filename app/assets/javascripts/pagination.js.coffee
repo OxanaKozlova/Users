@@ -9,5 +9,4 @@ $ ->
             $('.preload').show()
             $.getScript more_comments_url
         return
-      return
-      
+      return      
