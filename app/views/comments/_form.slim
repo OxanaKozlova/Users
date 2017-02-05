@@ -1,16 +1,6 @@
 .container
 br
-  = form_for(@comment = Comment.new , url: post_comments_path(@post)) do |f|
-    - if @comment.errors.any?
-      .alert.alert-danger
-        error_explanation
-          h2
-            = pluralize(@post.errors.count, t('errors.error')) 
-            = t('errors.save_comment')
-          ul
-          - @post.errors.full_messages.each do |message|
-            li = message
-
+  = form_for(Comment.new , url: post_comments_path(@post)) do |f|
     .form-group.row
       .col-sm-12
         = f.text_area :content, class: "form-control", placeholder: "Comment"      

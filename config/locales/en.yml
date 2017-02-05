@@ -74,3 +74,5 @@ en:
     save_post: 'prohibited this post from being saved:'
     save_user: 'prohibited this user from being saved:'
     save_comment: 'prohibited this comment from being saved:'
+  labels:
+    comments: Comments

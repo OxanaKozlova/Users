@@ -17,3 +17,9 @@
 @import "image";
 @import "comments";
 @import "footer";
+@import "font-awesome";
+
+.center {
+  display: flex;
+  justify-content: center;
+}
