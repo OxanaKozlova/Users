@@ -2,12 +2,18 @@ class PostsController < ApplicationController
   before_action :set_post, only:[:show, :edit, :destroy, :update]
   before_action :authenticate_user!
   load_and_authorize_resource
+  protect_from_forgery except: :show
 
   def index
     @posts = Post.all
   end
 
   def show
+     @comments = Comment.where(post: @post).paginate(page: params[:page], per_page: 10)
+    respond_to do |format|
+      format.html
+      format.js { render layout: false }
+    end
   end
 
   def new

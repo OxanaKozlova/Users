@@ -7,27 +7,36 @@ html
   = csrf_meta_tags
   
 body
-  .nav.navbar.navbar-default
+  nav.navbar.navbar-default
     .container-fluid
-      = link_to  t('app_name'), root_path, class: 'navbar-header navbar-brand'
-      ul.nav.navbar-nav.navbar-right
-        - if can? :create, User
-            li   = link_to ' All Users', users_path 
-        - if user_signed_in?
-            li role="presentation" class="dropdown"
-              a.dropdown-toggle data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"                  
-                span.glyphicon.glyphicon-align-justify aria-hidden="true"
-                ul.dropdown-menu
-                  li = link_to "#{current_user.name} #{current_user.last_name}", 
-                                edit_user_registration_path(current_user)
-             
-                  li = link_to 'Logout', destroy_user_session_path, :method => :delete
-        - else
+      .navbar-header
+        button.navbar-toggle.collapsed aria-expanded="false" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button" 
+          span.sr-only 
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+        = link_to  t('app_name'), root_path, class: 'navbar-brand'
+      #bs-example-navbar-collapse-1.collapse.navbar-collapse
+        ul.nav.navbar-nav.navbar-right
+          - if can? :create, User
+            li   = link_to ' All Users', users_path
+          - if user_signed_in?
+            li.dropdown
+              = link_to "#{current_user.name} #{current_user.last_name}",
+                        edit_user_registration_path(current_user), 
+                         class: 'dropdown-toggle', aria: { expanded:"false" , haspopup:"true"}, 
+                        data: { toggle:"dropdown" },  role: "button" 
+              ul.dropdown-menu
+                li = link_to t('links.users.edit_profile'), 
+                            edit_user_registration_path(current_user)
+                li = link_to 'Logout', destroy_user_session_path, :method => :delete
+          - else
             li 
               = link_to 'Login', new_user_session_path
             li 
-              = link_to 'Sign up', new_user_registration_path          
-  .container
-  
+              = link_to 'Sign up', new_user_registration_path                        
+  .container  
     = render partial: 'layouts/message'
     = yield
+  #footer.panel-footer
+    .container
