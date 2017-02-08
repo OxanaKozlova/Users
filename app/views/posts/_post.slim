@@ -1,15 +1,8 @@
-tr
-  td
-    = post.title
-  td
-    = "#{post.user.name} #{post.user.last_name}"
-  td
-    .thumbnail.image-preview-container.col-xs-6.col-md-3
-       = cl_image_tag post.image, :width => 100, 
-        :height => 100, :crop => :fill       
-  td
-    = link_to  t('links.posts.show'), post
-  td
-    = link_to  t('links.posts.edit'), edit_post_path(post)
-  td
-    = link_to t('links.posts.destroy'), post, method: :delete, data: { confirm: 'Are you sure?' }
+.col-md-6#list
+  figure.effect-marley
+    = cl_image_tag post.image, :crop => :fill
+    figcaption
+      h2  ="#{post.title} "
+      p ="#{post.user.name} #{post.user.last_name}" 
+
+      
