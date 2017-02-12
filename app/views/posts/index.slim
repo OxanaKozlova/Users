@@ -1,5 +1,4 @@
-.col-md-12.row#list
-  .grid
-    = render partial: 'post', collection: @posts || "There are no posts available."     
+.col-md-12.row.grid#list
+  = render partial: 'post', collection: @posts || "There are no posts available."   
 = link_to t('buttons.posts.create'), new_post_path, class: "btn btn-success" 
      
