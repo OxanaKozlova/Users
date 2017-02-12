@@ -20,8 +20,9 @@
         = f.cktext_area :content, class: "form-control"
     .form-group.row
       = f.label :image, class: "col-sm-1 col-form-label"
-      .thumbnail.image-preview-container.col-xs-6.col-md-3.preview
-        = cl_image_tag @post.image,  id: "img_prev", :crop => :fill 
+      - if @post.image.presence
+        .thumbnail.image-preview-container.col-xs-6.col-md-3.preview
+          = cl_image_tag @post.image,  id: "img_prev", :crop => :fill 
       .col-sm-8.col-sm-offset-1
         = f.file_field :image, class: "filestyle", onchange: "readURL(this)"
     br
