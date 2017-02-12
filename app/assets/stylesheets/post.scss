@@ -7,9 +7,17 @@
  -webkit-column-gap: .7em;
 }
 
+.col-md-12#list {
+  padding-bottom: 20px;
+}
+
 .col-md-6#list {
  display: inline-block;
- // padding: 20px;
+ padding-top: 3rem;
  width:100%;
- padding: 25px;
+ // padding-top:  25px;
+}
+
+.col-md-1#new-post {
+  padding-left: 30px;
 }
