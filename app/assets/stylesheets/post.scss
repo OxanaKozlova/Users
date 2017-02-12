@@ -1,0 +1,15 @@
+*, *:before, *:after {box-sizing:  border-box !important;}
+
+.row#list {
+ -moz-column-width: 27em;
+ -webkit-column-width: 27em;
+ -moz-column-gap: .7em;
+ -webkit-column-gap: .7em;
+}
+
+.col-md-6#list {
+ display: inline-block;
+ // padding: 20px;
+ width:100%;
+ padding: 25px;
+}
