@@ -74,5 +74,7 @@ en:
     save_post: 'prohibited this post from being saved:'
     save_user: 'prohibited this user from being saved:'
     save_comment: 'prohibited this comment from being saved:'
+    no_posts: 'There are no posts available'
+    no_users: 'There are no posts available'
   labels:
     comments: Comments
