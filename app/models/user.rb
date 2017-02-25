@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  acts_as_voter
   ROLES = [ADMIN_ROLE = :admin, MODERATOR_ROLE = :moderator, USER_ROLE = :user].freeze
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

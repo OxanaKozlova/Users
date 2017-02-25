@@ -49,6 +49,17 @@ class PostsController < ApplicationController
     redirect_to posts_url
   end
 
+def vote
+  if current_user.voted_up_on? @post
+    @post.downvote_by current_user
+  else
+    @post.upvote_by current_user
+  end
+  respond_to do |format|
+   format.js   { render :layout => false }
+  end
+end
+
   private
 
   def set_post
@@ -58,5 +69,6 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:title, :image, :content, :user)
   end
+
 
 end

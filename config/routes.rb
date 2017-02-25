@@ -6,8 +6,13 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
    root 'posts#index'
-   resources :posts, :shallow => true do
-     resources :comments, only: [:create]
+   resources :posts do
+     shallow  do
+       resources :comments, only: [:create]
+     end
+     member do
+       put "vote", to: "posts#vote"
+     end
    end
 
   # Example of regular route:
