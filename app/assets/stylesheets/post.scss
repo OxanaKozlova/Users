@@ -1,23 +1,21 @@
 *, *:before, *:after {box-sizing:  border-box !important;}
 
-.row#list {
- -moz-column-width: 27em;
- -webkit-column-width: 27em;
- -moz-column-gap: .7em;
- -webkit-column-gap: .7em;
-}
-
-.col-md-12#list {
-  padding-bottom: 20px;
+.grid-item {
+  float: left;
+   width: 50%;
+  height: 100%;
 }
 
 .col-md-6#list {
- display: inline-block;
- padding-top: 3rem;
- width:100%;
- // padding-top:  25px;
+    display: inline-block;
+    padding-top: 3rem;
+    width:100%;
+}
+.col-md-1#like-button {
+  padding-top: 10px;
+  padding-left: 0;
 }
 
-.col-md-1#new-post {
-  padding-left: 30px;
+.col-md-12#new-post {
+  padding-top: 20px;
 }

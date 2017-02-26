@@ -2,6 +2,7 @@ class PostsController < ApplicationController
   before_action :set_post, only:[:show, :edit, :destroy, :update]
   before_action :authenticate_user!
   load_and_authorize_resource
+  skip_authorize_resource :only => :vote
   protect_from_forgery except: :show
 
   def index

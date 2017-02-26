@@ -39,6 +39,7 @@ gem 'bootstrap-will_paginate', '~> 0.0.10'
 gem 'jquery-turbolinks'
 gem 'font-awesome-rails'
 gem 'acts_as_votable', '~> 0.10.0'
+gem 'jquery-masonry-rails'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

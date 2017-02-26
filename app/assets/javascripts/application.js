@@ -17,3 +17,4 @@
 
 //= require bootstrap
 //= require ckeditor/init
+//= require masonry.pkgd
