@@ -1,21 +1,10 @@
-*, *:before, *:after {box-sizing:  border-box !important;}
-
 .grid-item {
+  position: relative;
+  width: 50%;
   float: left;
-   width: 50%;
-  height: 100%;
+  padding: 20px;
 }
 
-.col-md-6#list {
-    display: inline-block;
-    padding-top: 3rem;
-    width:100%;
-}
-.col-md-1#like-button {
-  padding-top: 10px;
-  padding-left: 0;
-}
-
-.col-md-12#new-post {
-  padding-top: 20px;
+.grid-sizer {
+  width: 50%;
 }
