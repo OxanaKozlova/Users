@@ -26,9 +26,8 @@
         .col-sm-8.col-sm-offset-1
           = f.file_field :image, class: 'filestyle'
     br
-    br
-    .btn-group.btn-group  
-      = button_tag(type: 'submit', class: 'btn btn-success') do
-        .icon-ok.icon-white  = t('buttons.posts.save')
-        
-      = link_to  t('buttons.posts.back'), posts_path, class: 'btn btn-success'
+    br  
+    = button_tag(type: 'submit', class: 'btn btn-success btn-space') do
+      .icon-ok.icon-white  = t('buttons.posts.save')
+      
+    = link_to  t('buttons.posts.back'), posts_path, class: 'btn btn-warning'
