@@ -1,23 +1,20 @@
-*, *:before, *:after {box-sizing:  border-box !important;}
-
-.row#list {
- -moz-column-width: 27em;
- -webkit-column-width: 27em;
- -moz-column-gap: .7em;
- -webkit-column-gap: .7em;
+.grid-item {
+  position: relative;
+  width: 50%;
+  float: left;
+  padding: 20px;
+}
+.grid-sizer {
+  width: 50%;
 }
 
-.col-md-12#list {
-  padding-bottom: 20px;
+.like-button {;
+  text-align: left;
+  padding-left: 15cd px;
+  padding-top: 5px;
+
 }
 
-.col-md-6#list {
- display: inline-block;
- padding-top: 3rem;
- width:100%;
- // padding-top:  25px;
-}
-
-.col-md-1#new-post {
-  padding-left: 30px;
+.btn-space {
+    margin-right: 5px;
 }

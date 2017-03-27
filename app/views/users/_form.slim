@@ -37,9 +37,8 @@
       .col-sm-4
         = f.password_field :password, autocomplete: 'off', class: 'form-control', placeholder: 'Password' 
     br
-    br
-    .btn-group.btn-group  
-      = button_tag(type: 'submit', class: 'btn btn-success') do
-        .icon-ok.icon-white = t('buttons.users.save')
-        
-      = link_to t('buttons.users.back'), users_path, class: 'btn btn-success'
+    br  
+    = button_tag(type: 'submit', class: 'btn btn-success btn-space') do
+      .icon-ok.icon-white = t('buttons.users.save')
+      
+    = link_to t('buttons.users.back'), users_path, class: 'btn btn-warning'

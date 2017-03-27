@@ -19,8 +19,9 @@ body
       #bs-example-navbar-collapse-1.collapse.navbar-collapse
         ul.nav.navbar-nav.navbar-right
           - if can? :create, User
-            li   = link_to ' All Users', users_path
+            li = link_to ' All Users', users_path
           - if user_signed_in?
+            li = link_to t('buttons.posts.create'), new_post_path
             li.dropdown
               = link_to "#{current_user.name} #{current_user.last_name}",
                         edit_user_registration_path(current_user), 
