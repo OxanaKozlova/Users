@@ -10,12 +10,11 @@ h4
 h4
   strong = t('posts.attr.content')
   =< raw(@post.content)    
-.btn-group.btn-group
-  - if can? :update, @post
-    = link_to t('buttons.posts.edit'), edit_post_path(@post), class: 'btn btn-success'
-    = link_to t('links.posts.destroy'), @post, method: :delete, 
-      data: { confirm: 'Are you sure?' },  class: 'btn btn-success'
-  = link_to t('buttons.posts.back'), posts_path, class: 'btn btn-success'
+- if can? :update, @post
+  = link_to t('buttons.posts.edit'), edit_post_path(@post), class: 'btn btn-success btn-space'
+  = link_to t('links.posts.destroy'), @post, method: :delete, 
+    data: { confirm: 'Are you sure?' },  class: 'btn btn-danger btn-space'
+= link_to t('buttons.posts.back'), posts_path, class: 'btn btn-warning'
 = render 'comments/form'  
 - if @post.comments.present?
   .container
